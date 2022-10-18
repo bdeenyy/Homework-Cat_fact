@@ -2,18 +2,18 @@ package org.example;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class catFact {
+public class CatFact {
     private String id;
     private String text;
     private String type;
     private String user;
-    private String upvotes;
+    private int upvotes;
 
-    public catFact (@JsonProperty("id") String id,
-                    @JsonProperty("text") String text,
-                    @JsonProperty("type") String type,
-                    @JsonProperty("user") String user,
-                    @JsonProperty("upvotes") String upvotes) {
+    public CatFact(@JsonProperty("id") String id,
+                   @JsonProperty("text") String text,
+                   @JsonProperty("type") String type,
+                   @JsonProperty("user") String user,
+                   @JsonProperty("upvotes") int upvotes) {
         this.id = id;
         this.text = text;
         this.type = type;
@@ -21,11 +21,11 @@ public class catFact {
         this.upvotes = upvotes;
     }
 
-    public String  getId() {
+    public String getId() {
         return id;
     }
 
-    public catFact setId(String id) {
+    public CatFact setId(String id) {
         this.id = id;
         return this;
     }
@@ -38,7 +38,7 @@ public class catFact {
         return type;
     }
 
-    public catFact setText(String text) {
+    public CatFact setText(String text) {
         this.text = text;
         return this;
     }
@@ -47,27 +47,27 @@ public class catFact {
         return user;
     }
 
-    public String getUpvotes() {
+    public int getUpvotes() {
         return upvotes;
     }
 
-    public catFact setType(String type) {
+    public CatFact setType(String type) {
         this.type = type;
         return this;
     }
 
-    public catFact setUser(String user) {
+    public CatFact setUser(String user) {
         this.user = user;
         return this;
     }
 
-    public catFact setUpvotes(String upvotes) {
+    public CatFact setUpvotes(int upvotes) {
         this.upvotes = upvotes;
         return this;
     }
 
     @Override
     public String toString() {
-        return "<" + id + ", " + text + ", " + type + ", " + user + ", " + upvotes + ".>";
+        return "<" + id + ", \n" + text + ", \n" + type + ", \n" + user + ", \n" + upvotes + ".>\n\n";
     }
 }

@@ -30,10 +30,11 @@ public class Main {
         HttpGet request = new HttpGet(URI);
         CloseableHttpResponse response = httpClient.execute(request);
 
-        List<catFact> responses = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {});
-        Stream<catFact> stream = responses.stream();
-        responses= stream
-                .filter(value -> value.getUpvotes() != null && Integer.parseInt(value.getUpvotes()) > 0)
+        List<CatFact> responses = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {
+        });
+        Stream<CatFact> stream = responses.stream();
+        responses = stream
+                .filter(value -> value.getUpvotes() > 0)
                 .collect(toList());
         System.out.println(responses);
     }
